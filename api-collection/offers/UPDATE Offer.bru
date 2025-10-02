@@ -1,0 +1,27 @@
+meta {
+  name: UPDATE Offer
+  type: http
+  seq: 11
+}
+
+patch {
+  url: {{BASE_URL}}/offers/1
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "title": "Updated Premium Service",
+    "description": "Our updated premium service package with even more features",
+    "price": 129.99
+  }
+}
+
+headers {
+  content-type: application/json
+}
+
+settings {
+  encodeUrl: true
+}

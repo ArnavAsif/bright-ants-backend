@@ -1,0 +1,25 @@
+meta {
+  name: GET All Promotional Offers
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{BASE_URL}}/promotional-offers
+  body: none
+  auth: inherit
+}
+
+body:json {
+  {
+  //   "title": "Offer One",
+    "description": "Des Two"
+  //   "images": [
+  //     "1754863314269-h66zzcde.jpg"
+  //   ]
+  }
+}
+
+settings {
+  encodeUrl: true
+}

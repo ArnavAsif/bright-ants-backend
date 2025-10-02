@@ -1,0 +1,27 @@
+meta {
+  name: GET Carousel Image by ID
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{BASE_URL}}/carousel-images/2
+  body: none
+  auth: inherit
+}
+
+body:json {
+  {
+  //   "filename": "1754863314269-h66zzcde.jpg",
+    "row": "2"
+  }
+}
+
+body:multipart-form {
+  file: @file(/home/mushfiq/Pictures/Screenshots/Screenshot From 2025-07-07 04-35-58.png)
+  file: @file(/home/mushfiq/Pictures/Screenshots/Screenshot From 2025-05-25 02-16-52.png)
+}
+
+settings {
+  encodeUrl: true
+}

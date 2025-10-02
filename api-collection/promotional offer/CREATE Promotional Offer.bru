@@ -1,0 +1,25 @@
+meta {
+  name: CREATE Promotional Offer
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{BASE_URL}}/promotional-offers
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "title": "Offer One",
+    "description": "Des One",
+    "images": [
+      "1755278252027-1cyyd8uy.jpg"
+    ]
+  }
+}
+
+settings {
+  encodeUrl: true
+}

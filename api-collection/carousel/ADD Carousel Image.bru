@@ -1,0 +1,27 @@
+meta {
+  name: ADD Carousel Image
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{BASE_URL}}/carousel-images
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "filename": "1754863314269-h66zzcde.jpg",
+    "row": "1"
+  }
+}
+
+body:multipart-form {
+  file: @file(/home/mushfiq/Pictures/Screenshots/Screenshot From 2025-07-07 04-35-58.png)
+  file: @file(/home/mushfiq/Pictures/Screenshots/Screenshot From 2025-05-25 02-16-52.png)
+}
+
+settings {
+  encodeUrl: true
+}

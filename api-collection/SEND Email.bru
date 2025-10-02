@@ -1,0 +1,24 @@
+meta {
+  name: SEND Email
+  type: http
+  seq: 7
+}
+
+post {
+  url: http://localhost:3000/email
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "firstname": "Mushfiq",
+    "lastname": "Ahmed",
+    "email": "mushfiq.ahmed@gmail.com",
+    "message": "Hello, this is a test message from the backend."
+  }
+}
+
+settings {
+  encodeUrl: true
+}

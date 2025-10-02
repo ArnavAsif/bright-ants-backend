@@ -1,0 +1,22 @@
+meta {
+  name: UPDATE Work
+  type: http
+  seq: 4
+}
+
+patch {
+  url: {{BASE_URL}}/works/1
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "title": "work Three",
+    "image": "1755028866874-mqo6vc7b.png"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

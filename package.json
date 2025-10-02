@@ -1,0 +1,29 @@
+{
+  "name": "bright-ants-backend",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/src/index.js",
+    "migrate": "drizzle-kit generate:pg --config=drizzle.config.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.18.1",
+    "@hono/zod-validator": "^0.7.2",
+    "dotenv": "^17.2.1",
+    "drizzle-orm": "^0.44.4",
+    "hono": "^4.9.0",
+    "nodemailer": "^7.0.5",
+    "pg": "^8.16.3",
+    "sharp": "^0.34.3",
+    "zod": "^4.0.17"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "@types/nodemailer": "^7.0.0",
+    "@types/pg": "^8.15.5",
+    "drizzle-kit": "^0.31.4",
+    "tsx": "^4.7.1",
+    "typescript": "^5.8.3"
+  }
+}

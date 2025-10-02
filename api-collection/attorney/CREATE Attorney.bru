@@ -1,0 +1,23 @@
+meta {
+  name: CREATE Attorney
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{BASE_URL}}/attorneys
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "asif",
+    "designation": "Attorney",
+    "image": "1755336998295-ehdqy6v8.png"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

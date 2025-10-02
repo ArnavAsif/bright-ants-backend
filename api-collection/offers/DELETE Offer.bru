@@ -1,0 +1,18 @@
+meta {
+  name: DELETE Offer
+  type: http
+  seq: 12
+}
+
+delete {
+  url: {{BASE_URL}}/offers/1
+  auth: inherit
+}
+
+headers {
+  content-type: application/json
+}
+
+settings {
+  encodeUrl: true
+}

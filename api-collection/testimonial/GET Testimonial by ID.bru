@@ -1,0 +1,25 @@
+meta {
+  name: GET Testimonial by ID
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{BASE_URL}}/testimonials/1
+  body: none
+  auth: inherit
+}
+
+body:json {
+  {
+  //   "name": "mushfq",
+  //   "designation": "Senior Software Engineer",
+  //   "company": "Arbree Limited",
+  //   "image": "1754863314269-h66zzcde.jpg",
+    "content": "Lorem Torem"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

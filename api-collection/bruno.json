@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "BRIGHT ANTS",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

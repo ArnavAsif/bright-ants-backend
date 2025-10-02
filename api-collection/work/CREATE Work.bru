@@ -1,0 +1,22 @@
+meta {
+  name: CREATE Work
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{BASE_URL}}/works
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "title": "work Two",
+    "image": "1755344425753-w4fe66gh.jpg"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

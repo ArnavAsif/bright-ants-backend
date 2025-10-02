@@ -1,0 +1,22 @@
+meta {
+  name: GET Work by ID
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{BASE_URL}}/works/3
+  body: none
+  auth: inherit
+}
+
+body:json {
+  {
+    "title": "work Three",
+    "image": "1755028866874-mqo6vc7b.png"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

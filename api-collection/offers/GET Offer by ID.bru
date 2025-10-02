@@ -1,0 +1,18 @@
+meta {
+  name: GET Offer by ID
+  type: http
+  seq: 10
+}
+
+get {
+  url: {{BASE_URL}}/offers/1
+  auth: inherit
+}
+
+headers {
+  content-type: application/json
+}
+
+settings {
+  encodeUrl: true
+}

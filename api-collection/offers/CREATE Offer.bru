@@ -1,0 +1,27 @@
+meta {
+  name: CREATE Offer
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{BASE_URL}}/offers
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "title": "Premium Service",
+    "description": "Our premium service package with all features included",
+    "price": 99.99
+  }
+}
+
+headers {
+  content-type: application/json
+}
+
+settings {
+  encodeUrl: true
+}

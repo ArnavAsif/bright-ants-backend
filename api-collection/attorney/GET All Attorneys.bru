@@ -1,0 +1,22 @@
+meta {
+  name: GET All Attorneys
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{BASE_URL}}/attorneys
+  body: none
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "shofiq"
+  //   "image": "1754863314269-h66zzcde.jpg"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

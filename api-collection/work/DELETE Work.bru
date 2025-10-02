@@ -1,0 +1,22 @@
+meta {
+  name: DELETE Work
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{BASE_URL}}/works/1
+  body: none
+  auth: inherit
+}
+
+body:json {
+  {
+    "title": "work Three",
+    "image": "1755028866874-mqo6vc7b.png"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

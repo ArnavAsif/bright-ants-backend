@@ -1,0 +1,25 @@
+meta {
+  name: CREATE Testimonial
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{BASE_URL}}/testimonials
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "mushfq",
+    "designation": "Senior Software Engineer",
+    "company": "Arbree Limited",
+    "image": "1754863314269-h66zzcde.jpg",
+    "content": "Lorem"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

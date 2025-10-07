@@ -5,6 +5,8 @@ import {
   smallserial,
   json,
   numeric,
+  text,
+  timestamp,
 } from "drizzle-orm/pg-core";
 
 // ============================================================================
@@ -123,4 +125,29 @@ export const offersTable = pgTable("offers", {
   description: varchar({ length: 255 }).notNull(),
   /** Price of the offer */
   price: numeric({ precision: 10, scale: 2 }).notNull(),
+});
+
+// ============================================================================
+// BLOGS TABLE
+// ============================================================================
+
+/**
+ * Database table schema for offers.
+ * Stores information about service/product offers with pricing.
+ */
+export const blogsTable = pgTable("blogs", {
+  /** Unique identifier for the blog */
+  id: integer().primaryKey().generatedAlwaysAsIdentity(),
+  /** Title of the blog */
+  title: varchar({ length: 255 }).notNull(),
+  /** author of the blog */
+  author: varchar({ length: 255 }).notNull(),
+  /** Content of the blog */
+  content: text().notNull(),
+  /** Image of the blog */
+  image: varchar({ length: 255 }).notNull(),
+  /** Timestamp when the blog was created */
+  created_at: timestamp({ withTimezone: true }).defaultNow().notNull(),
+  /** Timestamp when the blog was last updated */
+  updated_at: timestamp({ withTimezone: true }).defaultNow().notNull(),
 });

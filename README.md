@@ -121,6 +121,12 @@ The server will start on `http://localhost:3000`.
 - `PUT /offers/:id` - Update an offer
 - `DELETE /offers/:id` - Delete an offer
 
+### Blogs
+- `GET /blogs` - Get all blogs
+- `POST /blogs` - Create a new blog
+- `PUT /blogs/:id` - Update a blog
+- `DELETE /blogs/:id` - Delete a blog
+
 ### Email
 - `POST /email` - Send an email through the contact form
 
@@ -180,6 +186,7 @@ The application uses the following database tables:
 4. **attorneys** - Stores attorney information
 5. **works** - Stores work/portfolio items
 6. **offers** - Stores service/product offers with pricing
+7. **blogs** - Stores blog information
 
 ## Contributing
 

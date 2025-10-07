@@ -1,0 +1,20 @@
+services:
+  db:
+    image: postgres:17 # Use PostgreSQL version 17 official image
+    container_name: bright-ants-db-pg # Optional: custom container name
+    restart: always # Optional: restart policy
+    environment:
+      POSTGRES_USER: admin # Database superuser username
+      POSTGRES_PASSWORD: admin # Database superuser password (change in production)
+      POSTGRES_DB: bright-ants # Default database name for Bright Ants
+    ports:
+      - "5432:5432" # Expose PostgreSQL standard port
+    volumes:
+      # Persist database data to named volume for data durability
+      - postgres_data:/var/lib/postgresql/data
+      # Optional: Database initialization scripts
+      # - ./init:/docker-entrypoint-initdb.d
+
+# Named volumes for data persistence
+volumes:
+  postgres_data: # PostgreSQL data storage volume

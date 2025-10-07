@@ -1,0 +1,24 @@
+meta {
+  name: CREATE Blog
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{BASE_URL}}/blogs
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "title": "Sample Blog Title",
+    "author": "John Doe",
+    "content": "This is the content of the sample blog post. It can be quite long and detailed.",
+    "image": "1754863314269-h66zzcde.jpg"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

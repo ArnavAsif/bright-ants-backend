@@ -17,6 +17,7 @@ import { attorneys } from "./routes/attorneys.js";
 import { works } from "./routes/works.js";
 import { email } from "./routes/email.js"; // Import the new email route
 import { offers } from "./routes/offers.js"; // Import the new offers route
+import { blogs } from "./routes/blogs.js"; // Import the new blogs route
 import { validateEnvVars } from "./config/env.js"; // Import env validation
 
 // ============================================================================
@@ -40,7 +41,10 @@ try {
   validateEnvVars();
   console.log("✅ All environment variables are properly configured");
 } catch (error: unknown) {
-  console.error("❌ Environment variable validation failed:", (error as Error).message);
+  console.error(
+    "❌ Environment variable validation failed:",
+    (error as Error).message,
+  );
   process.exit(1);
 }
 
@@ -97,6 +101,7 @@ app.route("/attorneys", attorneys);
 app.route("/works", works);
 app.route("/email", email); // Register the new email route
 app.route("/offers", offers); // Register the new offers route
+app.route("/blogs", blogs); // Register the new blogs route
 
 // ============================================================================
 // SERVER STARTUP AND SHUTDOWN

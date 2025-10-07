@@ -383,3 +383,70 @@ export const EmailSendSchema = EmailSchema;
 
 /** Type definition for sending an email */
 export type EmailSend = z.infer<typeof EmailSendSchema>;
+
+// ============================================================================
+// BLOGS TYPES
+// ============================================================================
+
+/**
+ * Zod schema for validating blog objects.
+ * Ensures that blogs have the required fields with proper types.
+ */
+export const BlogSchema = z
+  .object({
+    /** Unique identifier for the blog */
+    id: z.coerce.number().min(1),
+    /** Title of the blog */
+    title: z.string().min(1),
+    /** Author of the blog */
+    author: z.string().min(1),
+    /** Content of the blog */
+    content: z.string().min(1),
+    /** Image of the blog */
+    image: z.string().min(1),
+    /** Timestamp when the blog was created */
+    created_at: z.string().datetime(),
+    /** Timestamp when the blog was last updated */
+    updated_at: z.string().datetime(),
+  })
+  .strict();
+
+/** Type definition for a blog based on the schema */
+export type Blog = z.infer<typeof BlogSchema>;
+
+/**
+ * Zod schema for creating new blogs.
+ * Omit the ID and timestamps since they're auto-generated.
+ */
+export const BlogCreateSchema = BlogSchema.omit({
+  id: true,
+  created_at: true,
+  updated_at: true,
+});
+
+/** Type definition for creating a new blog */
+export type BlogCreate = z.infer<typeof BlogCreateSchema>;
+
+/**
+ * Zod schema for updating existing blogs.
+ * All fields are optional except ID and timestamps, which are omitted.
+ */
+export const BlogUpdateSchema = BlogSchema.partial().omit({
+  id: true,
+  created_at: true,
+  updated_at: true,
+});
+
+/** Type definition for updating a blog */
+export type BlogUpdate = z.infer<typeof BlogUpdateSchema>;
+
+/**
+ * Zod schema for deleting blogs.
+ * Only requires the ID of the blog to delete.
+ */
+export const BlogDeleteSchema = BlogSchema.pick({
+  id: true,
+});
+
+/** Type definition for deleting a blog */
+export type BlogDelete = z.infer<typeof BlogDeleteSchema>;

@@ -1,0 +1,24 @@
+meta {
+  name: UPDATE Blog
+  type: http
+  seq: 4
+}
+
+patch {
+  url: {{BASE_URL}}/blogs/{{blog_id}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "title": "Updated Blog Title",
+    "author": "Jane Smith",
+    "content": "This is the updated content of the blog post.",
+    "image": "1754863314269-h66zzcde.jpg"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

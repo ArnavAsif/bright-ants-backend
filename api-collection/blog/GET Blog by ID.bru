@@ -1,0 +1,15 @@
+meta {
+  name: GET Blog by ID
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{BASE_URL}}/blogs/{{blog_id}}
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}
